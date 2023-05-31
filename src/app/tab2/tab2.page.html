@@ -6,12 +6,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding" [style.--background]="scanActive? 'transparent': 'white'">
+  <ion-button *ngIf="!scanActive" (click)="scan()">Scanner</ion-button>
+  <ion-button *ngIf="scanActive" (click)="stopScan()" [expand]="true">£Stop Scan</ion-button>
+  {{ result }}
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
